@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="lateReason">
+        <item>请假</item>
+        <item>出差</item>
+        <item>迟到</item>
+        <item>自定义</item>
+    </string-array>
+    <string-array name="earlyReason">
+        <item>外出</item>
+        <item>请假</item>
+        <item>出差</item>
+        <item>自定义</item>
+    </string-array>
+
+</resources>

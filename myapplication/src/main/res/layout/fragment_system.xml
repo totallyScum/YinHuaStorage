@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.SystemFragment"
+    android:background="@color/grey_background"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="8dp"
+        android:orientation="vertical"
+   >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+
+            >
+            <TextView
+                android:textSize="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:text="设定管理员密码"
+                android:padding="10dp"
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical"
+                >
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:paddingTop="20dp"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="旧密码:"
+                        android:textColor="@color/black"
+                        android:textSize="17dp"></TextView>
+                    <EditText
+                        android:id="@+id/old_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/input_name"
+                        android:layout_toLeftOf="@+id/go_btn"
+                        android:hint="请输入旧密码"
+                        android:textColor="@color/black"
+                        android:background="@null"
+                        android:gravity="center_vertical|right"
+                        />
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/grey_background"></View>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="新密码:"
+                        android:textColor="@color/black"
+                        android:textSize="17dp"></TextView>
+
+                    <EditText
+                        android:id="@+id/new_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/input_name"
+                        android:layout_toLeftOf="@+id/go_btn"
+                        android:background="@null"
+                        android:gravity="center_vertical|right"
+                        android:hint="请输入新密码"
+                        android:textColor="@color/black" />
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/grey_background"></View>
+                <LinearLayout
+                    android:id="@+id/name_view"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="再次输入新密码:"
+                        android:textColor="@color/black"
+                        android:textSize="17dp"></TextView>
+
+                    <EditText
+                        android:id="@+id/new_password_check"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/input_name"
+                        android:layout_toLeftOf="@+id/go_btn"
+                        android:background="@null"
+                        android:gravity="center_vertical|right"
+                        android:hint="请再次输入新密码"
+                        android:textColor="@color/black" />
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/password_hint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <Button
+                    android:id="@+id/confirm"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/button_blue_background"
+                    android:textColor="@color/white"
+                    android:text="确认" />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:orientation="vertical"
+                android:visibility="invisible">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="自动开关柜门设定" />
+
+                <Switch
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:switchMinWidth="100dp"
+                    android:textOff="开"
+                    android:textOn="关" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/ll_time"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:background="@color/current_time_bg"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="15dp"
+                            android:background="@null"
+                            android:gravity="center_vertical"
+                            android:text="@string/current_time"
+                            android:textColor="@color/current_time_text"
+                            android:textSize="15sp" />
+
+                        <Space
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1" />
+
+                        <TextView
+                            android:id="@+id/tv_selected_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginEnd="15dp"
+                            android:background="@null"
+                            android:gravity="center_vertical"
+                            android:textColor="@color/selected_time_text"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="确认统一开柜时间" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/email"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:hint="请输入推送邮箱"
+                tools:visibility="invisible" />
+
+            <Button
+                android:id="@+id/confirm_email"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:gravity="center"
+                android:text="邮箱确认"
+                tools:visibility="invisible" />
+
+            <TextView
+                android:id="@+id/hint_email"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:gravity="center"
+                android:text="当前邮箱未设置"
+                tools:visibility="invisible" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:text="设定取柜时间"
+                android:textSize="20dp"
+                android:padding="10dp"
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:padding="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="20dp"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_weight="1"
+                        android:text="上午开始时间"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_weight="1"
+                        android:text="上午结束时间"
+
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_weight="1"
+                        android:text="下午开始时间"
+
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_weight="1"
+                        android:text="下午结束时间"
+
+                        />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TimePicker
+                        android:id="@+id/system_start_time_am"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+
+                        android:headerBackground="@color/blue"
+                        android:numbersSelectorColor="#104E8B"></TimePicker>
+
+                    <TimePicker
+                        android:id="@+id/system_end_time_am"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:headerBackground="@color/blue"
+                        android:numbersSelectorColor="#104E8B"
+                        android:theme="@style/MyTimePicker"></TimePicker>
+
+                    <TimePicker
+                        android:id="@+id/system_start_time_pm"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:headerBackground="@color/blue"
+                        android:numbersSelectorColor="#104E8B"></TimePicker>
+
+                    <TimePicker
+                        android:id="@+id/system_end_time_pm"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:headerBackground="@color/blue"
+                        android:numbersSelectorColor="#104E8B"></TimePicker>
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/set_time"
+                    android:layout_width="120dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/button_blue_background"
+                    android:text="取柜时间设定"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/hint_time_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center" />
+            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="管理员选定"
+                android:textSize="20dp"
+                android:padding="10dp"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                >
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+
+                        >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=" 请输入管理员ID:"
+                            android:textColor="@color/black"
+                            android:textSize="17dp"
+                            android:paddingLeft="20dp"
+                            ></TextView>
+
+                        <EditText
+                            android:id="@+id/admin_id"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/input_name"
+                            android:layout_toLeftOf="@+id/go_btn"
+                            android:background="@null"
+                            android:gravity="center_vertical|right"
+                            android:hint="管理员ID"
+                            android:textColor="@color/black"
+                            android:paddingRight="20dp" />
+                    </LinearLayout>
+                        <View
+                            android:background="@color/grey_background"
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+
+                            ></View>
+                    <TextView
+                        android:id="@+id/hint_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:paddingRight="20dp"
+                        />
+                </LinearLayout>
+                <Button
+                    android:id="@+id/submit_admin"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:text="提交"
+                    android:background="@drawable/button_blue_background"
+                    android:textColor="@color/white"
+                    android:layout_gravity="center"
+                    />
+
+                <ListView
+                    android:id="@+id/admin_listview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"></ListView>
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

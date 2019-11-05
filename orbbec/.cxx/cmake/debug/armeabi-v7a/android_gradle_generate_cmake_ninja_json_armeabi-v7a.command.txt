@@ -1,0 +1,15 @@
+Executable : E:\Android\Sdk\cmake\3.6.4111459\bin\cmake.exe
+arguments : 
+-HE:\AndroidStudioProjects\YinHuaStorage\orbbec
+-BE:\AndroidStudioProjects\YinHuaStorage\orbbec\.cxx\cmake\debug\armeabi-v7a
+-DANDROID_ABI=armeabi-v7a
+-DANDROID_PLATFORM=android-16
+-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=E:\AndroidStudioProjects\YinHuaStorage\orbbec\build\intermediates\cmake\debug\obj\armeabi-v7a
+-DCMAKE_BUILD_TYPE=Debug
+-DANDROID_NDK=E:\Android\Sdk\ndk-bundle
+-DCMAKE_CXX_FLAGS=-frtti -fexceptions -fPIC  
+-DCMAKE_TOOLCHAIN_FILE=E:\Android\Sdk\ndk-bundle\build\cmake\android.toolchain.cmake
+-DCMAKE_MAKE_PROGRAM=E:\Android\Sdk\cmake\3.6.4111459\bin\ninja.exe
+-GAndroid Gradle - Ninja
+jvmArgs : 
+

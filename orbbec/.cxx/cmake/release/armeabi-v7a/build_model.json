@@ -1,0 +1,69 @@
+{
+  "variant": {
+    "module": {
+      "rootBuildGradleFolder": "E:\\AndroidStudioProjects\\YinHuaStorage",
+      "sdkFolder": "E:\\Android\\Sdk",
+      "isNativeCompilerSettingsCacheEnabled": false,
+      "isBuildOnlyTargetAbiEnabled": true,
+      "splitsAbiFilterSet": [],
+      "intermediatesFolder": "E:\\AndroidStudioProjects\\YinHuaStorage\\orbbec\\build\\intermediates",
+      "gradleModulePathName": ":orbbec",
+      "moduleRootFolder": "E:\\AndroidStudioProjects\\YinHuaStorage\\orbbec",
+      "makeFile": "E:\\AndroidStudioProjects\\YinHuaStorage\\orbbec\\CMakeLists.txt",
+      "buildSystem": "CMAKE",
+      "compilerSettingsCacheFolder": "E:\\AndroidStudioProjects\\YinHuaStorage\\.cxx",
+      "cxxFolder": "E:\\AndroidStudioProjects\\YinHuaStorage\\orbbec\\.cxx",
+      "ndkFolder": "E:\\Android\\Sdk\\ndk-bundle",
+      "ndkVersion": "20.0.5594570",
+      "ndkSupportedAbiList": [
+        "ARMEABI_V7A",
+        "ARM64_V8A",
+        "X86",
+        "X86_64"
+      ],
+      "ndkDefaultAbiList": [
+        "ARMEABI_V7A",
+        "ARM64_V8A",
+        "X86",
+        "X86_64"
+      ],
+      "cmakeToolchainFile": "."
+    },
+    "buildSystemArgumentList": [],
+    "cFlagList": [],
+    "cppFlagsList": [
+      "-frtti -fexceptions -fPIC  "
+    ],
+    "variantName": "release",
+    "soFolder": "E:\\AndroidStudioProjects\\YinHuaStorage\\orbbec\\build\\intermediates\\cmake\\release\\lib",
+    "objFolder": "E:\\AndroidStudioProjects\\YinHuaStorage\\orbbec\\build\\intermediates\\cmake\\release\\obj",
+    "jsonFolder": "E:\\AndroidStudioProjects\\YinHuaStorage\\orbbec\\.cxx\\cmake\\release",
+    "gradleBuildOutputFolder": "E:\\AndroidStudioProjects\\YinHuaStorage\\orbbec\\.cxx\\cxx\\release",
+    "isDebuggableEnabled": false,
+    "validAbiList": [
+      "ARMEABI_V7A"
+    ],
+    "buildTargetSet": []
+  },
+  "abi": "ARMEABI_V7A",
+  "abiPlatformVersion": 16,
+  "cxxBuildFolder": "E:\\AndroidStudioProjects\\YinHuaStorage\\orbbec\\.cxx\\cmake\\release\\armeabi-v7a",
+  "jsonFile": "E:\\AndroidStudioProjects\\YinHuaStorage\\orbbec\\.cxx\\cmake\\release\\armeabi-v7a\\android_gradle_build.json",
+  "gradleBuildOutputFolder": "E:\\AndroidStudioProjects\\YinHuaStorage\\orbbec\\.cxx\\cxx\\release\\armeabi-v7a",
+  "objFolder": "E:\\AndroidStudioProjects\\YinHuaStorage\\orbbec\\build\\intermediates\\cmake\\release\\obj\\armeabi-v7a",
+  "buildCommandFile": "E:\\AndroidStudioProjects\\YinHuaStorage\\orbbec\\.cxx\\cmake\\release\\armeabi-v7a\\build_command.txt",
+  "buildOutputFile": "E:\\AndroidStudioProjects\\YinHuaStorage\\orbbec\\.cxx\\cmake\\release\\armeabi-v7a\\build_output.txt",
+  "modelOutputFile": "E:\\AndroidStudioProjects\\YinHuaStorage\\orbbec\\.cxx\\cmake\\release\\armeabi-v7a\\build_model.json",
+  "cmake": {
+    "cmakeListsWrapperFile": "E:\\AndroidStudioProjects\\YinHuaStorage\\orbbec\\.cxx\\cxx\\release\\armeabi-v7a\\CMakeLists.txt",
+    "toolchainWrapperFile": "E:\\AndroidStudioProjects\\YinHuaStorage\\orbbec\\.cxx\\cxx\\release\\armeabi-v7a\\android_gradle_build.toolchain.cmake",
+    "buildGenerationStateFile": "E:\\AndroidStudioProjects\\YinHuaStorage\\orbbec\\.cxx\\cxx\\release\\armeabi-v7a\\build_generation_state.json",
+    "cacheKeyFile": "E:\\AndroidStudioProjects\\YinHuaStorage\\orbbec\\.cxx\\cxx\\release\\armeabi-v7a\\compiler_cache_key.json",
+    "compilerCacheUseFile": "E:\\AndroidStudioProjects\\YinHuaStorage\\orbbec\\.cxx\\cxx\\release\\armeabi-v7a\\compiler_cache_use.json",
+    "compilerCacheWriteFile": "E:\\AndroidStudioProjects\\YinHuaStorage\\orbbec\\.cxx\\cxx\\release\\armeabi-v7a\\compiler_cache_write.json",
+    "toolchainSettingsFromCacheFile": "E:\\AndroidStudioProjects\\YinHuaStorage\\orbbec\\.cxx\\cxx\\release\\armeabi-v7a\\compiler_settings_cache.cmake",
+    "cmakeWrappingBaseFolder": "."
+  },
+  "jsonGenerationLoggingRecordFile": "E:\\AndroidStudioProjects\\YinHuaStorage\\orbbec\\.cxx\\cmake\\release\\armeabi-v7a\\json_generation_record.json",
+  "compileCommandsJsonFile": "E:\\AndroidStudioProjects\\YinHuaStorage\\orbbec\\.cxx\\cmake\\release\\armeabi-v7a\\compile_commands.json"
+}

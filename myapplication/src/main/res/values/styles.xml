@@ -1,0 +1,60 @@
+<resources>
+
+    <style name="AppTheme" parent="android:Theme.Light" />
+
+
+
+
+    <style name="date_picker_dialog" parent="android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowBackground">@color/date_picker_bg</item>
+    </style>
+
+    <style name="AlertDialog" parent="@android:style/Theme.DeviceDefault.Dialog">
+        <!--该行代码就是设置AlertDialog的背景-->
+        <item name="android:background">@color/white</item>
+    </style>
+
+
+    <style name="MyEditText" parent="Theme.AppCompat.Light">
+
+        <item name="colorControlActivated">@color/blue</item>
+    </style>
+
+
+    <!--<style name="select_style">-->
+        <!--<item name="android:layout_width">60dip</item>-->
+        <!--<item name="android:layout_height">wrap_content</item>-->
+        <!--<item name="android:layout_marginLeft">4dip</item>-->
+        <!--<item name="android:layout_marginRight">4dip</item>-->
+        <!--<item name="android:paddingTop">4dip</item>-->
+        <!--<item name="android:paddingBottom">4dip</item>-->
+        <!--<item name="android:background">@drawable/select_selector</item>-->
+        <!--<item name="android:button">@null</item>-->
+        <!--<item name="android:gravity">center</item>-->
+        <!--<item name="android:textSize">13sp</item>-->
+        <!--<item name="android:textColor">@drawable/txt_select_selector</item>-->
+    <!--</style>-->
+    <style name="MyTimePicker" parent="@android:style/Widget.Material.TimePicker">
+        <item name="android:colorPrimary">@android:color/white</item>
+    </style>
+
+
+
+    <style name="Theme.picker" parent="android:Theme.Holo.Dialog">
+        <item name="android:editTextStyle">@style/Widget.EditText.White</item>
+    </style>
+    <style name="Widget.EditText.White" parent="@android:style/Widget.EditText">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="PopupWindowAnimation" parent="@android:style/Animation.Dialog">
+        <item name="android:windowEnterAnimation">@anim/popup_in</item>
+        <item name="android:windowExitAnimation">@anim/popup_out</item>
+    </style>
+
+
+</resources>

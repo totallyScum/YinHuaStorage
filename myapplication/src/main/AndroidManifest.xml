@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.wandao.myapplication">
+
+    <uses-permission android:name="android.permission.ALLOWED_HARDWARE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.hardware.camera.autofocus" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> <!-- 记录logcat日志功能 所需的权限 -->
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name=".activity.MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/launcher_wandao"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/launcher_wandao"
+        android:supportsRtl="true"
+        android:debuggable="true"
+        tools:ignore="HardcodedDebugMode">
+        <activity android:name=".MenuActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            >
+
+        </activity>
+        <activity
+            android:name=".activity.UserTimeSettingActivity"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
+        <activity android:name=".activity.LockScreenActivity" />
+        <activity android:name=".activity.UrgentOpenNoIdentificationActivity" />
+        <activity android:name=".activity.UrgentOpenActivity" />
+        <activity android:name=".activity.StaffManagementActivity" />
+        <activity
+            android:name=".activity.DepartmentActivity"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
+        <activity android:name=".activity.LogcatActivity" />
+        <activity
+            android:name=".activity.SystemActivity"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
+        <activity
+            android:name=".activity.SettingActivity"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
+        </activity>
+        <activity
+            android:name=".activity.MainActivity"
+            android:launchMode="singleInstance"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
+
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+        <activity android:name=".activity.PassActivity" />
+        <activity android:name="com.baidu.idl.sample.ui.LicenseActivity" />
+        <activity android:name="com.baidu.idl.sample.ui.RegisterActivity" />
+        <activity
+            android:name=".activity.RegisterInfoActivity"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
+        <activity
+            android:name=".activity.UserActivity"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
+        <activity android:name=".activity.ImageDetailActivity" />
+        <activity android:name="com.baidu.idl.sample.ui.ImageDetailActivity" />
+        <activity android:name=".activity.RegisterActivity" />
+        <activity android:name=".activity.LicenseActivity" >
+            <!--            <intent-filter>-->
+            <!--                <action android:name="android.intent.action.MAIN" />-->
+
+            <!--                <category android:name="android.intent.category.LAUNCHER" />-->
+            <!--            </intent-filter>-->
+        </activity>
+        <activity android:name=".activity.BatchImportActivity" />
+        <service android:name=".service.DoorService" />
+        <service android:name=".service.SendEmailService" />
+        <service android:name=".service.ServerService" />
+        <service android:name=".service.StorageLogService" />
+
+        <receiver android:name=".receiver.PowerUpReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>

@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:xcustom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.MainActivity">
+
+    <View
+        android:id="@+id/view_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background_main" />
+    <include
+        android:id="@+id/title_bar"
+        layout="@layout/layout_title" />
+    <RelativeLayout
+        android:id="@+id/layout_input"
+        android:layout_width="600dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title_bar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="67dp"
+        android:visibility="visible">
+
+        <com.baidu.idl.sample.view.DrawView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            xcustom:drawColor="#5CACEE"
+            xcustom:drawRoundRadius="17dp"
+            xcustom:drawStyleFill="true"></com.baidu.idl.sample.view.DrawView>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+        <TextView
+            android:id="@+id/input_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="37dp"
+            android:layout_marginTop="33dp"
+            android:text="@string/input_name"
+            android:textColor="#FFFFFF"
+            android:textSize="13dp" />
+
+        <EditText
+            android:id="@+id/nick_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/input_name"
+            android:layout_marginLeft="37dp"
+            android:layout_marginRight="37dp"
+            android:layout_marginTop="17dp"
+            android:layout_toLeftOf="@+id/go_btn"
+            android:hint="姓名中不能含有特殊符号"
+            android:textColor="@color/grey_white_text"
+            />
+    <TextView
+        android:id="@+id/input_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="37dp"
+        android:layout_marginTop="33dp"
+        android:text="@string/input_id"
+        android:textColor="#FFFFFF"
+        android:textSize="13dp" />
+
+    <EditText
+        android:id="@+id/user_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/input_name"
+        android:layout_marginLeft="37dp"
+        android:layout_marginRight="37dp"
+        android:layout_marginTop="17dp"
+        android:layout_toLeftOf="@+id/go_btn"
+        android:hint="ID必须为纯数字"
+        android:textColor="@color/grey_white_text"
+        />
+
+    <TextView
+        android:id="@+id/input_tel"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginLeft="37dp"
+        android:layout_marginTop="33dp"
+        android:text="@string/input_tel"
+        android:textColor="#FFFFFF"
+        android:textSize="13dp"
+        android:visibility="invisible"
+        />
+
+    <EditText
+        android:id="@+id/user_tel"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@id/input_name"
+        android:layout_marginLeft="37dp"
+        android:layout_marginRight="37dp"
+        android:layout_marginTop="17dp"
+        android:layout_toLeftOf="@+id/go_btn"
+        android:hint=""
+        android:textColor="@color/grey_white_text"
+        android:visibility="invisible"
+        />
+
+    <TextView
+        android:id="@+id/input_department"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="37dp"
+        android:layout_marginTop="33dp"
+        android:text="@string/input_department"
+        android:textColor="#FFFFFF"
+        android:textSize="13dp" />
+
+    <EditText
+        android:id="@+id/user_department"
+        android:layout_width="0dp"
+android:layout_height="0dp"
+        android:visibility="invisible"
+        />
+    <Spinner
+        android:id="@+id/user_department_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/input_department"
+        android:layout_marginLeft="37dp"
+        android:layout_marginRight="37dp"
+        android:layout_marginTop="17dp"
+
+        ></Spinner>
+    <TextView
+        android:id="@+id/input_email"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginLeft="37dp"
+        android:layout_marginTop="33dp"
+        android:text="@string/input_email"
+        android:textColor="#FFFFFF"
+        android:textSize="13dp"
+        android:visibility="invisible"
+        />
+
+    <EditText
+        android:id="@+id/user_email"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@id/input_department"
+        android:layout_marginLeft="37dp"
+        android:layout_marginRight="37dp"
+        android:layout_marginTop="17dp"
+        android:layout_toLeftOf="@+id/go_btn"
+        android:hint="xxxxxxx@xx.com"
+        android:textColor="@color/grey_white_text"
+        android:visibility="invisible"
+        />
+
+
+
+<LinearLayout
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+<LinearLayout
+    android:id="@+id/box_select"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_weight="1">
+    <TextView
+        android:id="@+id/input_box_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="37dp"
+        android:layout_marginTop="33dp"
+        android:text="选择储物柜"
+        android:textColor="#FFFFFF"
+        android:textSize="13dp" />
+
+    <NumberPicker
+        android:id="@+id/mNumberPicker"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="37dp"
+        android:layout_marginTop="17dp"
+        android:layout_gravity="center"></NumberPicker>
+</LinearLayout>
+
+    <CheckBox
+
+        android:id="@+id/select_admin"
+        android:text="设置为管理员"
+        android:textColor="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        />
+</LinearLayout>
+    <EditText
+        android:visibility="invisible"
+        android:id="@+id/user_box_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/input_department"
+        android:layout_marginLeft="37dp"
+        android:layout_marginRight="37dp"
+        android:layout_marginTop="17dp"
+        android:layout_toLeftOf="@+id/go_btn"
+        android:hint="请输入箱号"
+        android:textColor="@color/grey_white_text" />
+
+    <Button
+        android:id="@+id/go_btn"
+        android:layout_gravity="center"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:text="注册"
+        android:textColor="#ffffff"
+        android:background="@drawable/button_blue_background"
+        />
+</LinearLayout>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/text_batch_register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout_input"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:text="@string/batch_register"
+        android:textColor="#7D94FE"
+        android:textSize="12dp" />
+</RelativeLayout>

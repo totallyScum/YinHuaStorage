@@ -1,0 +1,8 @@
+Executable : E:\Android\Sdk\cmake\3.6.4111459\bin\cmake.exe
+arguments : 
+--build
+E:\AndroidStudioProjects\YinHuaStorage\iminect\.cxx\cmake\debug\armeabi-v7a
+--target
+digColor
+jvmArgs : 
+

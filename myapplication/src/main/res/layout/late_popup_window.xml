@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/late_popup_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@color/grey_background"
+    android:padding="20dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="请选择迟到理由"
+        android:layout_gravity="left"></TextView>
+
+
+    <com.wrbug.editspinner.EditSpinner
+        android:id="@+id/edit_spinner_late"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"></com.wrbug.editspinner.EditSpinner>
+    <!--    <Spinner-->
+    <!--        android:id="@+id/late_reason"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:entries="@array/lateReason"-->
+    <!--        ></Spinner>-->
+
+    <!--    <Button-->
+    <!--        android:id="@+id/submit_leave_reason"-->
+    <!--        android:text="提交"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="20dp"-->
+    <!--        android:background="@drawable/button_blue_background"-->
+    <!--        android:textColor="@color/white"-->
+    <!--        ></Button>-->
+</LinearLayout>

@@ -1,0 +1,2 @@
+include ':app', ':facesample', ':myapplication',
+        ':facelibrary', ':orbbec', ':iminect', ':editspinner', ':serialportlibrary'

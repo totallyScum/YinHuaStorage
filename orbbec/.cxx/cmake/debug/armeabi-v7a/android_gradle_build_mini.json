@@ -1,0 +1,16 @@
+{
+  "buildFiles": [
+    "E:\\AndroidStudioProjects\\YinHuaStorage\\orbbec\\CMakeLists.txt"
+  ],
+  "cleanCommands": [
+    "E:\\Android\\Sdk\\cmake\\3.6.4111459\\bin\\cmake.exe --build E:\\AndroidStudioProjects\\YinHuaStorage\\orbbec\\.cxx\\cmake\\debug\\armeabi-v7a --target clean"
+  ],
+  "libraries": {
+    "DepthUtils-Debug-armeabi-v7a": {
+      "artifactName": "DepthUtils",
+      "buildCommand": "E:\\Android\\Sdk\\cmake\\3.6.4111459\\bin\\cmake.exe --build E:\\AndroidStudioProjects\\YinHuaStorage\\orbbec\\.cxx\\cmake\\debug\\armeabi-v7a --target DepthUtils",
+      "abi": "armeabi-v7a",
+      "output": "E:\\AndroidStudioProjects\\YinHuaStorage\\orbbec\\build\\intermediates\\cmake\\debug\\obj\\armeabi-v7a\\libDepthUtils.so"
+    }
+  }
+}

@@ -1,0 +1,137 @@
+package com.wandao.myapplication.service;
+
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.app.Service;
+import android.content.Context;
+import android.content.Intent;
+import android.os.Environment;
+import android.os.IBinder;
+import android.os.SystemClock;
+import android.util.Log;
+
+import com.wandao.myapplication.utils.ExcelUtil;
+import com.wandao.myapplication.utils.TimeUtil;
+
+import java.util.Calendar;
+import java.util.Date;
+
+import static android.app.PendingIntent.FLAG_CANCEL_CURRENT;
+import static android.app.PendingIntent.FLAG_UPDATE_CURRENT;
+
+public class StorageLogService extends Service {
+    String status=new String();
+    private static String fileDayPath = Environment.getExternalStorageDirectory() + "/存储柜统计报表/日报表";
+    private static String fileWeekPath = Environment.getExternalStorageDirectory() + "/存储柜统计报表/周报表";
+    private static String fileMonthPath = Environment.getExternalStorageDirectory() + "/存储柜统计报表/月报表";
+    @Override
+    public IBinder onBind(Intent intent) {
+        return null;
+    }
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        initAlarmDay();
+        initAlarmWeek();
+   //     initAlarmMonth();
+    }
+    @Override
+    public int onStartCommand(Intent intent, int flags, int startId) {
+        Log.d("boxDayLog", "8888888888");
+        if (intent!=null){
+            status = intent.getStringExtra("log");
+            if (status!=null) {
+                if (status.equals("day")) {
+                    Calendar calendar = Calendar.getInstance();
+                    ExcelUtil.exportDayExcel(getApplicationContext(),fileDayPath);
+                    if (TimeUtil.getInstance().booleanMonthLastDay()){
+                        ExcelUtil.exportMonthExcel(getApplicationContext(),fileMonthPath);
+                    }
+//                    String excelDayFileName = "/万道日报.xls";
+//                    ExcelUtil.writeWeekObjListToExcel(DbUtils.weekLog(getThisWeekMonday().getTime(), getThisWeekFriday().getTime()), fileDayPath + excelDayFileName, getApplicationContext());
+                }
+                if (status.equals("week")) {
+                    ExcelUtil.exportWeekExcel(getApplicationContext(),fileWeekPath);
+//                    String excelWeekFileName = "/万道周报.xls";
+//                    ExcelUtil.writeWeekObjListToExcel(DbUtils.weekLog(getThisWeekMonday().getTime(), getThisWeekFriday().getTime()), fileWeekPath + excelWeekFileName, getApplicationContext());
+//                    mFilePath = filePath + "/万道周报.xls";
+//                    path = new String[]{mFilePath};
+//                    EmailUtil.autoSendFileMail("万道日志周报", "万道周报", email, path);
+                }
+                if (status.equals("month")) {
+                    ExcelUtil.exportMonthExcel(getApplicationContext(),fileMonthPath);
+//                    String excelMonthFileName = "/万道月报.xls";
+//                    ExcelUtil.writeMonthObjListToExcel(DbUtils.monthLog(TimeUtil.getInstance().getLastMonthFirstDay(), TimeUtil.getInstance().getLastMonthEndDay()), fileMonthPath + excelMonthFileName, getApplicationContext());
+//                    mFilePath = filePath + "/万道月报.xls";
+//                    path = new String[]{mFilePath};
+//                    EmailUtil.autoSendFileMail("万道日志月报", "万道月报", email, path);
+                }
+            }
+        }
+        return super.onStartCommand(intent, flags, startId);
+    }
+
+    public void initAlarmDay(){             //打开一个时间广播，去进行相关操作
+        Intent intent = new Intent(getApplicationContext(), StorageLogService.class);
+        intent.putExtra("log","day");
+   //     PendingIntent sender = PendingIntent.getBroadcast(getApplicationContext(), ELAPSED_REALTIME, intent, PendingIntent.FLAG_CANCEL_CURRENT);
+        PendingIntent sender = PendingIntent.getService(getApplicationContext(), 0, intent, FLAG_UPDATE_CURRENT);
+        // Schedule the alarm!
+        AlarmManager am = (AlarmManager) getApplicationContext()
+                .getSystemService(Context.ALARM_SERVICE);
+//        calendar.set(Calendar.SECOND, 00);
+//        calendar.set(Calendar.MILLISECOND, 0);
+        Date date = new Date(System.currentTimeMillis());
+        date.setHours(19);
+        date.setMinutes(00);
+        // calendar.set(Calendar.DAY_OF_WEEK,1);
+    //    am.set(AlarmManager.RTC_WAKEUP,date.getTime(),sender);
+        //am.setRepeating(AlarmManager.RTC_WAKEUP,date.getTime(),AlarmManager.INTERVAL_DAY,sender);
+        am.setRepeating(AlarmManager.RTC_WAKEUP, date.getTime(),AlarmManager.INTERVAL_DAY,sender);
+        Log.d("时间", date.getTime() + "");
+    }
+
+
+
+
+
+    public void initAlarmWeek(){             //打开一个时间广播，去进行相关操作
+        Intent intent = new Intent(getApplicationContext(), StorageLogService.class);
+        intent.putExtra("log","week");
+        PendingIntent sender = PendingIntent.getService(getApplicationContext(), 1, intent, FLAG_UPDATE_CURRENT);
+        // Schedule the alarm!
+        AlarmManager am = (AlarmManager) getApplicationContext()
+                .getSystemService(Context.ALARM_SERVICE);
+
+        Calendar calendar = Calendar.getInstance();    //获取周末
+        int day_of_week = calendar.get(Calendar.DAY_OF_WEEK) - 1;
+        if (day_of_week == 0)
+            day_of_week = 7;
+        calendar.add(Calendar.DATE, -day_of_week + 4);
+        calendar.set(Calendar.HOUR_OF_DAY, 20);
+        calendar.set(Calendar.MINUTE, 00);
+        calendar.set(Calendar.SECOND, 00);
+        calendar.set(Calendar.MILLISECOND, 0);
+        Log.d("boxDayLog_week", calendar.getTimeInMillis()+"");
+        am.setRepeating(AlarmManager.RTC_WAKEUP,calendar.getTimeInMillis(),AlarmManager.INTERVAL_DAY*7,sender);
+    }
+    public void initAlarmMonth(){             //打开一个时间广播，去进行相关操作
+        Intent intent = new Intent(getApplicationContext(), StorageLogService.class);
+        intent.putExtra("log","month");
+        PendingIntent sender = PendingIntent.getService(getApplicationContext(), 2, intent, 0);
+        // Schedule the alarm!
+        AlarmManager am = (AlarmManager) getApplicationContext()
+                .getSystemService(Context.ALARM_SERVICE);
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(Calendar.HOUR_OF_DAY, 8);
+        calendar.set(Calendar.MINUTE, 00);
+        calendar.set(Calendar.SECOND, 00);
+        calendar.set(Calendar.MILLISECOND, 0);
+        calendar.set(Calendar.DAY_OF_MONTH,1);
+        Log.d("boxDayLog_month", calendar.getTimeInMillis()+"");
+   //     am.set(AlarmManager.RTC_WAKEUP,calendar.getTimeInMillis(),sender);
+        am.setRepeating(AlarmManager.RTC_WAKEUP,calendar.getTimeInMillis(),AlarmManager.INTERVAL_DAY,sender);
+    }
+
+}
