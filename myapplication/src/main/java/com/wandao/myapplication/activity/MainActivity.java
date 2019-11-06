@@ -686,7 +686,7 @@ public class MainActivity extends BaseActivity implements ILivenessCallBack, Vie
 //                            if (currentBox.getBoxId()>20)
 //                                boxService.lockControlOpenDoor(Byte.valueOf((currentBox.getBoxId()-20) + ""), Byte.valueOf(15 + ""));
 
-                            DoorUtils.getSingleton().openDoor(Byte.valueOf(currentBox.getBoxId() + ""));   //银华开门方式
+                            DoorUtils.getSingleton().openDoor(Byte.valueOf(currentBox.getBoxId() + ""),getApplicationContext());   //银华开门方式
 
 //                            Toast.makeText(this, "当前不是可取手机时间！", LENGTH_LONG).show();
                             DbUtils.storageLog(DbUtils.checkStorageStatus(new Date(),currentUser.getId()), new Date(), currentUser.getId());    //记录存柜事件
@@ -753,7 +753,7 @@ public class MainActivity extends BaseActivity implements ILivenessCallBack, Vie
 ////                                if (currentBox.getBoxId()>20)
 ////                                    boxService.lockControlOpenDoor(Byte.valueOf((currentBox.getBoxId()-20) + ""), Byte.valueOf(15 + ""));
 
-                                DoorUtils.getSingleton().openDoor(Byte.valueOf(currentBox.getBoxId() + ""));   //银华开门方式
+                                DoorUtils.getSingleton().openDoor(Byte.valueOf(currentBox.getBoxId() + ""),getApplicationContext());   //银华开门方式
 
 
                                 //开门指令

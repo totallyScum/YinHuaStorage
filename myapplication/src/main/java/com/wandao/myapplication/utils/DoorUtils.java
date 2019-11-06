@@ -1,5 +1,7 @@
 package com.wandao.myapplication.utils;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -28,39 +30,42 @@ public class DoorUtils {
         }
         return singleton;
     }
-    public void openDoor(int doorNumber)
+    public void openDoor(int doorNumber, Context context)
     {
-        //发送开门指令
-        //        byte[] b=new byte{0x5C,0xC5,0x05,0x01,0x02,0x00,0x00,0xD7}
-        byte[] b=new byte[9];
-        b[0]=(byte)0x5C;
-        b[1]=(byte)0xC5;
-        b[2]=(byte)0x05;
+//        //发送开门指令
+//        //        byte[] b=new byte{0x5C,0xC5,0x05,0x01,0x02,0x00,0x00,0xD7}
+//        byte[] b=new byte[9];
+//        b[0]=(byte)0x5C;
+//        b[1]=(byte)0xC5;
+//        b[2]=(byte)0x05;
+//
+//
+//
+//        b[3]=(byte)0x01;//锁控版地址
+//        b[3]=(byte)Long.parseLong((doorNumber/10)+1+"",16);//锁控版地址
+//
+//        b[4]=(byte)0xD1;
+//   //     b[4]=(byte)0xD2;
+//        b[5]=(byte)Long.parseLong(doorNumber%10+"",16);                //锁地址
+//   //     b[5]=(byte)0x02;                //锁地址
+//        b[6]=(byte)0x00;
+//        b[7]=(byte)0x00;
+//
+//        byte b1 = 0;
+//        for (int i = 2; i < b.length; i++)
+//        {
+//            b1 ^= b[i];
+//        }
+//        b[8]=(byte)b1;
+//        //      byte[] receiveData = serialPortService.sendData("5CC50501D1020000D7");
+//        byte[] receiveData = serialPortService.sendData(b);
+//        if (receiveData!=null)
+//            Log.e("MainActivity：", ByteStringUtil.byteArrayToHexStr(receiveData));
 
-
-
-        b[3]=(byte)0x01;//锁控版地址
-        b[3]=(byte)Long.parseLong((doorNumber/10)+1+"",16);//锁控版地址
-
-        b[4]=(byte)0xD1;
-   //     b[4]=(byte)0xD2;
-        b[5]=(byte)Long.parseLong(doorNumber%10+"",16);                //锁地址
-   //     b[5]=(byte)0x02;                //锁地址
-        b[6]=(byte)0x00;
-        b[7]=(byte)0x00;
-
-        byte b1 = 0;
-        for (int i = 2; i < b.length; i++)
-        {
-            b1 ^= b[i];
-        }
-        b[8]=(byte)b1;
-        //      byte[] receiveData = serialPortService.sendData("5CC50501D1020000D7");
-        byte[] receiveData = serialPortService.sendData(b);
-        if (receiveData!=null)
-            Log.e("MainActivity：", ByteStringUtil.byteArrayToHexStr(receiveData));
-
-        
+        Intent localIntent=new Intent("com.hzjubu.action.REQ_OPEN_DOOR");
+        localIntent.putExtra("iBoardId",doorNumber/10);
+        localIntent.putExtra("iLockId",doorNumber%10);
+        context.sendBroadcast(localIntent);
     }
 
     public int  checkDoorStatus()
