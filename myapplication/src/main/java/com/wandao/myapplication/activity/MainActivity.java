@@ -672,7 +672,7 @@ public class MainActivity extends BaseActivity implements ILivenessCallBack, Vie
                     break;
                 }
             }
-            case R.id.open_button: {
+            case R.id.open_button: {       //存柜
                 if (currentUser == null) {
                     Toast.makeText(this, "非本公司人员请勿操作！", LENGTH_LONG).show();
                     break;
@@ -741,7 +741,7 @@ public class MainActivity extends BaseActivity implements ILivenessCallBack, Vie
                     break;
                 }
             }
-            case R.id.lock_button: {
+            case R.id.lock_button: {            //取柜
                 if (currentUser == null) {
                     break;
                 } else {

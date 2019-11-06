@@ -60,6 +60,7 @@ public class DoorUtils {
         if (receiveData!=null)
             Log.e("MainActivity：", ByteStringUtil.byteArrayToHexStr(receiveData));
 
+        
     }
 
     public int  checkDoorStatus()
