@@ -189,12 +189,11 @@ public class MainActivity extends BaseActivity implements ILivenessCallBack, Vie
       //  initBanner();
         initActivity();
      //   initLicence();
-        DbUtils.initBoxNumber(60);
+    //    DbUtils.initBoxNumber(60);
 //        Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION);
 //        intent.setData(Uri.parse("package:" + getPackageName()));
 //        startActivityForResult(intent,100);
         //注册广播接收器
-
         requestOverlayPermission();
     }
 
